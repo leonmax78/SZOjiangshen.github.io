@@ -51073,3 +51073,11 @@ document.addEventListener('DOMContentLoaded',init);
   };
 })();
 </script>
+
+<style id="v88at-license-countdown-visible">
+#topStatus.status{display:block!important;font-size:14px!important;color:#fde68a!important;font-weight:1000!important;white-space:nowrap!important;border:1px solid rgba(253,230,138,.45)!important;background:rgba(120,53,15,.35)!important;border-radius:999px!important;padding:6px 10px!important;}
+@media(max-width:700px){#topStatus.status{font-size:11px!important;padding:4px 7px!important;max-width:42vw;overflow:hidden;text-overflow:ellipsis;}}
+</style>
+<script id="v88at-license-countdown-fix">
+(function(){function by(id){return document.getElementById(id)}function dec(s){try{s=String(s||'').trim().replace(/-/g,'+').replace(/_/g,'/');while(s.length%4)s+='=';return decodeURIComponent(escape(atob(s)))}catch(e){try{return atob(s)}catch(_){return ''}}}function exp(key){key=String(key||'').trim();var parts=key.split('.'),c=[];if(parts.length>=2)c.push(parts[1]);c.push(key);for(var i=0;i<c.length;i++){var txt=dec(c[i]);if(!txt)continue;try{var o=JSON.parse(txt);var v=o.exp||o.expires||o.expiry||o.expiresAt||o.expireAt||o.validUntil||o.until||o.end;if(typeof v==='number')return v<20000000000?v*1000:v;if(typeof v==='string'){var n=Number(v);if(!Number.isNaN(n))return n<20000000000?n*1000:n;var d=Date.parse(v);if(!Number.isNaN(d))return d}}catch(e){}}return 0}function update(){if(typeof AUTH_REQUIRED==='undefined'||!AUTH_REQUIRED)return;var el=by('topStatus');if(!el)return;el.style.setProperty('display','block','important');var key=localStorage.getItem('combined_manual_tool_license_key')||localStorage.getItem('license_key')||'';if(!key){el.textContent='未授權';return}var ex=exp(key);if(!ex){el.textContent='授權已啟用';return}var diff=ex-Date.now();if(diff<=0){el.textContent='授權已到期';return}var dd=Math.floor(diff/86400000),h=Math.floor((diff%86400000)/3600000),m=Math.floor((diff%3600000)/60000);el.textContent='授權剩餘：'+dd+'天 '+h+'小時 '+m+'分'}window.v88atUpdateLicenseCountdown=update;document.addEventListener('DOMContentLoaded',update);if(document.readyState!=='loading')update();setInterval(update,60000);document.addEventListener('click',function(e){if(e.target&&e.target.id==='licenseSubmit')setTimeout(update,120)},true)})();
+</script>
